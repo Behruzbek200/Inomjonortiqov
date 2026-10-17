@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: musiqa-bot
+    runtime: docker
+    plan: starter            # doimiy disk (baza saqlanishi) uchun pullik reja kerak
+    healthCheckPath: /
+    autoDeploy: true
+    disk:
+      name: bot-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: BOT_TOKEN
+        sync: false          # Render panelida qo'lda kiritiladi
+      - key: MAIN_ADMIN_ID
+        sync: false
+      - key: DB_PATH
+        value: /var/data/bot_data.db
+      - key: LOG_FILE
+        value: ""            # loglar Render "Logs" bo'limida ko'rinadi
