@@ -1,0 +1,4 @@
+python-telegram-bot>=21.6,<23
+shazamio>=0.7.0
+python-dotenv>=1.0.0
+yt-dlp>=2025.1.1
